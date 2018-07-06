@@ -75,7 +75,7 @@ table {
 ```
 个人感觉里面还有可添加的内容，比如输入框各个浏览器默认的 outline 样式等
 
-**2. 如果你用 less 写，你需要[安装 less-loader](https://note.youdao.com/) ,其他同理**
+**2. 如果你用 less 写，你需要安装 less-loader,其他同理**
  
 ```
 npm install --save-dev less-loader less
@@ -108,7 +108,7 @@ import "./assets/fonts/iconfont.css"
 **5. 各移动端适配**
 
 采用 iphone 6/7/8 的 750px 设计稿为标准（和设计对接好）
-js独立在 fitMobile.js 里面
+js独立在 fitMobile.js 里面（参考网络）
 
 ```
 // 根据设备设置 html 的 fontsize
