@@ -19,6 +19,30 @@ npm run dev
 ---
 
 ## 说明
+### 目录
+####1 样式部分
+ 1.1 reset.css
+
+ 1.2 less-loader
+
+ 1.3 设计标准
+
+ 1.4 阿里 iconfont 使用
+
+ 1.5 移动端适配
+
+ 1.6 图片资源
+
+####2 跨域配置
+####3 接口，域名的配置
+
+ 3.1 本地配置
+ 3.2 测试，生产环境配置
+
+####4 Hbuild 打包 APP
+####5 相关移动端 UI 框架
+
+----------
 
 #### 样式部分
 **1. [reset.css](https://meyerweb.com/eric/tools/css/reset//) 最好自己看一遍，熟悉一下，添加自己的东西**
@@ -105,6 +129,7 @@ npm install --save-dev less-loader less
 ```
 import "./assets/fonts/iconfont.css"
 ```
+
 **5. 各移动端适配**
 
 采用 iphone 6/7/8 的 750px 设计稿为标准（和设计对接好）
@@ -146,7 +171,7 @@ Vue.use(fitMobile);
 - 全局样式：index.less
 - 局部样式：写在各自文件里或者你直接写 index.less，后面也可以，也方便维护，看个人喜好
 
-#### 关于跨域
+#### 跨域配置
 
 目前我这边遇到过两种情况：
 
@@ -167,7 +192,9 @@ proxyTable: {
     },
 ```
 
-#### 其他方便开发的配置
+#### 接口，域名的配置
+
+1.本地配置
 
 ```
     host: 'localhost', // run 之后的访问域名，可设置成电脑 ip 方便局域网手机输入地址测试
@@ -175,7 +202,22 @@ proxyTable: {
     autoOpenBrowser: true, // npm run dev 之后可以自动打开默认浏览器调试
 ```
 
-#### 关于 Hbuild 打包 APP
+2.测试，生产环境配置
+
+```
+    //dev.env.js
+    module.exports = merge(prodEnv, {
+		NODE_ENV: '"development"',
+		API_ROOT: '"//192.168.1.111/api"'  //配置开发环境地址
+	})
+
+	//prod.env.js
+    module.exports = merge(prodEnv, {
+		NODE_ENV: '"development"',
+		API_ROOT: '"//www.google.com/api"'  //配置开发环境地址
+	})
+```
+#### Hbuild 打包 APP
 
 （当然你也可以用其他工具，比如：[Cordova](http://cordova.axuer.com/)）
 
