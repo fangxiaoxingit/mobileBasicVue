@@ -48,7 +48,7 @@ npm run dev
 
 ----------
 
-#### 样式部分
+### 样式部分
 **1. [reset.css](https://meyerweb.com/eric/tools/css/reset//) 最好自己看一遍，熟悉一下，添加自己的东西**
  
 ```
@@ -196,7 +196,7 @@ proxyTable: {
     },
 ```
 
-#### 接口，域名的配置
+### 接口，域名的配置
 
 1.本地配置
 
@@ -221,7 +221,7 @@ proxyTable: {
 		API_ROOT: '"//www.google.com/api"'  //配置开发环境地址
 	})
 ```
-#### Hbuild 打包 APP
+### Hbuild 打包 APP
 
 （当然你也可以用其他工具，比如：[Cordova](http://cordova.axuer.com/)）
 
@@ -232,7 +232,7 @@ assetsPublicPath: './',
 ```
 是的，就是在前面加个 .  即可，然后正常 build 之后，放进 hbuild 正常操作即可；
 
-#### 相关移动端 UI 框架
+### 相关移动端 UI 框架
 
 ==框架选择需要谨慎！==
 
