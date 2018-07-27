@@ -29,22 +29,21 @@ export default {
 @import "../assets/less/index.less";
 .iconfont{
   color: #42b983;
-  font-size: 2rem;
+  font-size: 30px;
 }
 .index{
-  width: 7.5rem;
-  height: auto;
-  font-size: .4rem;
+  width: 750px;
+  font-size: 30px;
   background: @color-background;
   color: @color-theme;
   line-height: 3;
 }
 .index_2{
-  font-size: .3rem;
+  font-size: 30px;
   line-height: 3;
 }
 h1{
-  font-size: .5rem;
+  font-size: 50px;
   line-height: 2;
 }
 </style>

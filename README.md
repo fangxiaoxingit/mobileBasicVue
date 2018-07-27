@@ -17,6 +17,31 @@ npm run dev
 如有纰漏及疑问，邮件联系：*onlyfangsiyu@163.com*
 
 ---
+###  2018-07-27 更新
+
+新增分支：**pxtorem**
+ 
+原因：可以直接使用 750px 的设计稿，编写 css 时，直接使用 px 单位，通过 postcss-pxtorem 转换成 rem 适配。根元素的 fontSize 通过 rem.js 设置（可具体查看代码内容）；
+
+main.js 内增加：
+
+   
+    import "./assets/js/rem"
+
+
+需要安装：$ npm install postcss-pxtorem
+
+并在 .postcssrc.js 的 plugins 里面添加如下代码：
+
+    "postcss-pxtorem": {
+      "rootValue": 32,
+      "propList": ["*"],
+      // 注意：如果有使用第三方UI如VUX，则需要配置下忽略选择器不转换。
+      // 规则是class中包含的字符串，如vux中所有的class前缀都是weui-。也可以是正则。
+      "selectorBlackList": ["weui-"]
+    }
+
+----------
 
 ## 说明
 ### 目录
