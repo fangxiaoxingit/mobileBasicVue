@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const env = require('../config/prod.env')
 
@@ -35,7 +36,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {
-          warnings: false
+          warnings: false,
+          drop_debugger: true,//关闭debug
+          drop_console: true,//关闭console
         }
       },
       sourceMap: config.build.productionSourceMap,
@@ -57,6 +60,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         ? { safe: true, map: { inline: false } }
         : { safe: true }
     }),
+    //build之前删除dist内容，重新生成
+    new CleanWebpackPlugin(),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
@@ -64,6 +69,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: config.build.index,
       template: 'index.html',
       inject: true,
+      favicon: './favicon.ico',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
